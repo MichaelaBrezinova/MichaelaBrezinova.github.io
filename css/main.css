@@ -71,6 +71,7 @@ height: 133px;
     font-size: 1.5rem;
     justify-content: center;
     margin-top: 7rem;
+    margin-bottom: 0.5rem;
     text-align: center;
 }
 .hey_label{
@@ -138,7 +139,19 @@ a:hover {
     background-color: black;
     color: white;
 }
-
+#demo{
+    margin-top: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#demoButton{
+   display:block; 
+}
+#homeButton{
+    display: none;
+    margin-right:2em;
+}
 .inputfile + label {
 	cursor: pointer; /* "hand" cursor */
 }
@@ -147,7 +160,7 @@ a:hover {
     display: none;
 }
 
-#login {
+#home {
     display:flex;
     flex-direction:column;
     justify-content: center;
@@ -157,8 +170,16 @@ a:hover {
     animation-duration: 6s;
     
 }
+.homeIcon{
+    size: 2em;
+}
+.homeIcon:hover {
+    color: #DDA0DD;
+}
 .logSpotify {
     min-height: fit-content;
+    display: flex;
+    justify-content: center;
 }
 .logSpotify:hover {
     background-color: black;
