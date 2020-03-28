@@ -24,12 +24,11 @@
       <div id="loginbutton" class="logbutton">
         <a href="/login">Log in</a>
       </div> -->
-      <div id="demoButton" class="logbutton" onclick="showDemo()">
+      <div id="logoutbutton" class="logbutton">
         <a>Demo</a>
       </div>
-      <div id="homeButton" class="logbutton" onclick="hideDemo()"><i class="fa fa-home homeIcon"></i></div>
     </div>
-    <div id="home">
+    <div id="login">
       <!-- <h1>This is an example of the Authorization Code flow</h1>
       <a href="/login" class="btn btn-primary">Log in with Spotify</a> -->
       <!-- <i class="fas fa-headphones-alt icn"></i> -->
@@ -37,8 +36,7 @@
       <div class="log_in_label">Speak, record and get the perfect track for the background </div>
       <a  class="w3-button w3-transparent w3-hover-black w3-border w3-border-black w3-disabled w3-round-large logSpotify">Log in to Spotify</a>
       <i class="fab fa-spotify icn"></i>
-      <div class="coming"> &#x2661; Coming online soon &#x2661;</div>
-      <a  class="w3-button w3-black w3-hover-pink w3-round-large logSpotify" onclick="showDemo()">Watch demo</a>
+      <div class="coming"> &#x2661; Coming online soon &#x2661; </div>
       <div class ="first_text_block">
         <p>
           Have you ever been watching a movie with an emotional scene and the music was just so matching the mood? <br><br>
@@ -58,27 +56,9 @@
       </div>
     </div>
   </div>
-  <div id="demo">
-    <video class="player" width="764" height="417" controls>
-      <source src="movie.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-  </div>
-     
-  <script>
-    function showDemo(){
-      document.getElementById("home").style.display = 'none';
-      document.getElementById("demo").style.display = 'flex';
-      document.getElementById("homeButton").style.display = 'block';
-      document.getElementById("demoButton").style.display = 'none';
-     }
-     function hideDemo(){
-      document.getElementById("demo").style.display = 'none';
-      document.getElementById("home").style.display = 'flex';
-      document.getElementById("homeButton").style.display = 'none';
-      document.getElementById("demoButton").style.display = 'block';
-     }
-  </script>
+  <!-- <footer>
+    <div class= "register"> &reg 2020 All rights reserved.</div>
+  </footer> -->
   </body>
 </html>
 
