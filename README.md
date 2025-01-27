@@ -1,3 +1,3 @@
-# Landing page for LYRE music recommender
+# My personal website
 
-This is a temporary version of the website while we are migrating the full pipeline to be functioning externally. 
+This is a version of my personal website.
