@@ -1,84 +1,167 @@
-<!doctype html>
-<html>
-  <head>
-    <link rel="icon" href="white_logo.png" type="image/gif" sizes="16x16">
-    <title>You LYRE</title>
-    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Quicksand|Roboto|Roboto+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/7a82229a2a.js" crossorigin="anonymous"></script>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f8f5f2;
+          color: #333;
+          line-height: 1.8;
+      }
 
-  <body>
-  <!-- <div class="box"><img id="logo" src="Lyre_logo.png"/></div> -->
-  <div class="container">
-    <div class="header" id="myHeader">
-      <img src="white_logo.png" class="logo" width="30rem"/>
-      LYRE
-      <!-- <a href="/logout" class="fas fa-sign-out-alt logouticon"></a> -->
-      <!-- <div id="logoutbutton" class="logbutton">
-        <a href="/logout" >Log out</a>
-      </div>
-      <div id="loginbutton" class="logbutton">
-        <a href="/login">Log in</a>
-      </div> -->
-      <div id="demoButton" class="logbutton" onclick="showDemo()">
-        <a>Demo</a>
-      </div>
-      <div id="homeButton" class="logbutton" onclick="hideDemo()"><i class="fa fa-home homeIcon"></i></div>
-    </div>
-    <div id="home">
-      <!-- <h1>This is an example of the Authorization Code flow</h1>
-      <a href="/login" class="btn btn-primary">Log in with Spotify</a> -->
-      <!-- <i class="fas fa-headphones-alt icn"></i> -->
-      <div class="lyre_label">LYRE</div>
-      <div class="log_in_label">Speak, record and get the perfect track for the background </div>
-      <a  class="w3-button w3-transparent w3-hover-black w3-border w3-border-black w3-disabled w3-round-large logSpotify">Log in to Spotify</a>
-      <i class="fab fa-spotify icn"></i>
-      <div class="coming"> &#x2661; Coming online soon &#x2661;</div>
-      <a  class="w3-button w3-black w3-hover-pink w3-round-large logSpotify" onclick="showDemo()">Watch demo</a>
-      <div class ="first_text_block">
-        <p>
-          Have you ever been watching a movie with an emotional scene and the music was just so matching the mood? <br><br>
+      .container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 2rem;
+      }
 
-          Have you wondered what song would fit the emotional moments in your life?
-          <br><br>
-          That's exactly what <span style="color:rgb(209, 63, 119); font-weight: bold;">Lyre</span> is for!
-        </p>
-        <img class= "served_song" src="served_song.png" />
-      </div>
-      <div class ="second_text_block">
-        
-       <div class="labelpic"><img class= "flow" src="speak.png" /> You speak and record</div> 
-       <div class="labelpic"> Lyre analyses the convo<img class= "flow" src="analyze.png" /></div> 
-       <div class="labelpic"><img class= "flow" src="puzzle.png" /> Lyre picks the perfect song</div> 
-       <div class="labelpic">Your background music is lit <img class= "flow" src="lovemusic.png" /></div> 
-      </div>
+      .photo {
+          flex: 0 0 250px;
+          position: relative;
+          margin-right: 3rem;
+      }
+
+      .photo img {
+          width: 100%;
+          height: auto;
+          border-radius: 15px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .content {
+          flex: 1;
+          max-width: 600px;
+      }
+
+      .content p {
+          margin-bottom: 1.5rem;
+          font-size: 1.1rem;
+          color: #555;
+      }
+
+      .content h1 {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+      }
+
+      .content h1 span {
+          font-size: 1.5rem;
+      }
+
+      .links {
+          margin-top: 1.5rem;
+          display: flex;
+          gap: 1rem;
+      }
+
+      .links a {
+          text-decoration: none;
+          color: #fff;
+          background-color: #3e4a61;
+          padding: 0.6rem 1rem;
+          border-radius: 5px;
+          font-size: 0.9rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: background-color 0.3s;
+      }
+
+      .links a:hover {
+          background-color: #2c364a;
+      }
+
+      .projects {
+          margin-top: 2rem;
+      }
+
+      .projects h2 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          color: #3e4a61;
+      }
+
+      .projects ul {
+          list-style-type: none;
+          padding: 0;
+      }
+
+      .projects li {
+          margin-bottom: 1rem;
+          font-size: 1rem;
+      }
+
+      .projects li a {
+          text-decoration: none;
+          color: #3e4a61;
+          border-bottom: 1px solid #3e4a61;
+          transition: color 0.3s, border-bottom-color 0.3s;
+      }
+
+      .projects li a:hover {
+          color: #2c364a;
+          border-bottom-color: #2c364a;
+      }
+
+      .content a.cv-link {
+          color: #3e4a61;
+          font-weight: bold;
+          /* background-color: #3e4a61; */
+          /* padding: 0.2rem 0.4rem; */
+          /* border-radius: 3px; */
+          text-decoration: none;
+          transition: background-color 0.3s;
+      }
+
+      .content a.cv-link:hover {
+          background-color: #9aabcb;
+      }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="photo">
+            <img src="michaela.jpeg"Michaela">
+        </div>
+
+        <div class="content">
+            <h1>Hi, I am Michaela! <span>👋</span></h1>
+            <p>
+                My name is Michaela Brezinova and I am a Computational Chemistry PhD student at University of Cambridge specializing in AI-driven drug discovery. This includes efficient traversals of chemical space or structure-based drug design. Check out my <a href="Brezinova_CV.pdf" target="_blank" class="cv-link">CV</a>.
+            </p>
+
+            <div class="links">
+                <a href="https://x.com/michbrezinova" target="_blank">🐦 Twitter/X</a>
+                <a href="https://www.linkedin.com/in/michaela-brezinova/" target="_blank">🔗 LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=2vyAlGsAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a>
+                <a href="https://github.com/MichaelaBrezinova" target="_blank">🐱 GitHub </a>
+            </div>
+
+            <div class="projects">
+                <h2>Highlighted Projects</h2>
+                <ul>
+                    <li><a href="https://www.researchsquare.com/article/rs-4512167/v1"> <i class="fa-solid fa-link"></i> Identification of high-affinity secondary nucleation inhibitors of Aβ42 aggregation from an ultra-large chemical library using Deep Docking</a>
+                    <!-- <pi>iewfowehoiwhen</pi> -->
+                    </li>
+                    <!-- <li><a href="#">Project 2: Description of the second project</a></li>
+                    <li><a href="#">Project 3: Description of the third project</a></li> -->
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
-  <div id="demo">
-    <video class="player" width="764" height="417" controls>
-      <source src="movie.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-  </div>
-     
-  <script>
-    function showDemo(){
-      document.getElementById("home").style.display = 'none';
-      document.getElementById("demo").style.display = 'flex';
-      document.getElementById("homeButton").style.display = 'block';
-      document.getElementById("demoButton").style.display = 'none';
-     }
-     function hideDemo(){
-      document.getElementById("demo").style.display = 'none';
-      document.getElementById("home").style.display = 'flex';
-      document.getElementById("homeButton").style.display = 'none';
-      document.getElementById("demoButton").style.display = 'block';
-     }
-  </script>
-  </body>
+</body>
 </html>
-
