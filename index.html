@@ -24,6 +24,7 @@
         max-width: 950px;
         margin: 0 auto;
         padding: 4rem 2rem 2rem 4rem;
+        gap: 2rem;
       }
 
       .projects-wrapper {
@@ -37,7 +38,6 @@
       .photo {
           flex: 0 0 250px;
           position: relative;
-          margin-right: 3rem;
       }
 
       .photo img {
@@ -96,10 +96,8 @@
 
       .projects {
           background-color: #ffffff88;
-    
           padding: 1rem 2rem;
           border-radius: 15px;
-          /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
           max-width: 100%;
       }
 
@@ -153,12 +151,46 @@
       .content a.cv-link:hover {
           background-color: #9aabcb;
       }
+
+      @media screen and (max-width: 768px) {
+        .about-me-wrapper {
+            flex-direction: column;
+            padding: 2rem 1.5rem;
+            align-items: center;
+            text-align: center;
+        }
+
+        .photo {
+            margin-right: 0;
+            max-width: 250px;
+            width: 100%;
+        }
+
+        .content {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .content h1 {
+        text-align: center;
+        justify-content: center;
+        }
+        
+        .links {
+            justify-content: center;
+        }
+
+        .projects-wrapper {
+            padding: 1rem;
+        }
+
+        .projects {
+            padding: 1.5rem;
+        }
+    }
     </style>
 </head>
 <body>
-    <!-- <div class="site-title-container">
-        <h3 class="site-title">brezinova.me</h3>
-    </div> -->
     <div class="about-me-wrapper">
         <div class="photo">
             <img src="michaela.jpeg" alt="Michaela">
@@ -167,7 +199,7 @@
         <div class="content">
             <h1>Hi, I am Michaela! <span>👋</span></h1>
             <p>
-                My name is Michaela Brezinova and I am a Computational Chemistry PhD student at the University of Cambridge specializing in <b>AI-driven drug discovery</b> 💊. This includes efficient traversals of chemical space and structure-based drug design. Previously I worked as a SWE in <b>Google Health</b>. For more details, check out my <a href="Brezinova_CV.pdf" target="_blank" class="cv-link">CV</a>.
+                My name is Michaela Brezinova and I am a Computational Chemistry PhD student at the University of Cambridge specializing in <b>AI-driven drug discovery</b> 💊. This includes efficient traversals of chemical space and structure-based drug design. Previously I worked as a SWE at <b>Google Health</b>. For more details, check out my <a href="Brezinova_CV.pdf" target="_blank" class="cv-link">CV</a>. Feel free to also reach out at <span><b>mb2462</b><span style="display:none;">nospam</span> [at] <b>cam.ac.uk</b></span>
             </p>
 
             <div class="links">
