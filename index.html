@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michaela Brezinova</title>
+
     <style>
       body {
           font-family: Arial, sans-serif;
@@ -20,7 +21,6 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: left;
         max-width: 950px;
         margin: 0 auto;
         padding: 4rem 2rem 2rem 4rem;
@@ -29,7 +29,6 @@
 
       .projects-wrapper {
         display: flex;
-        justify-content: left;
         max-width: 950px;
         margin: 0 auto;
         padding: 2rem 2rem 4rem;
@@ -37,12 +36,10 @@
 
       .photo {
           flex: 0 0 250px;
-          position: relative;
       }
 
       .photo img {
           width: 100%;
-          height: auto;
           border-radius: 15px;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
@@ -53,21 +50,15 @@
       }
 
       .content p {
-          margin-bottom: 1.5rem;
           font-size: 1.1rem;
           color: #555;
       }
 
       .content h1 {
           font-size: 2rem;
-          margin-bottom: 1rem;
           display: flex;
           align-items: center;
           gap: 0.5rem;
-      }
-
-      .content h1 span {
-          font-size: 1.5rem;
       }
 
       .links {
@@ -87,142 +78,210 @@
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          transition: background-color 0.3s;
       }
 
       .links a:hover {
           background-color: #2c364a;
       }
 
-      .projects {
-          background-color: #ffffff88;
-          padding: 1rem 2rem;
-          border-radius: 15px;
-          max-width: 100%;
-      }
-
-      .projects h2 {
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-          color: #3e4a61;
-      }
-
-      .projects h2 + ul {
-          margin-bottom: 2rem;
-          padding-bottom: 2rem;
-          border-bottom: 1px solid #ddd;
-      }
-
-      .projects ul:last-of-type {
-          margin-bottom: 0;
-          padding-bottom: 0;
-          border-bottom: none;
-      }
-
-      .projects ul {
-          list-style-type: none;
-          padding: 0;
-      }
-
-      .projects li {
-          margin-bottom: 1rem;
-          font-size: 1rem;
-      }
-
-      .projects li a {
-          text-decoration: none;
-          color: #3e4a61;
-          border-bottom: 1px solid #3e4a61;
-          transition: color 0.3s, border-bottom-color 0.3s;
-      }
-
-      .projects li a:hover {
-          color: #2c364a;
-          border-bottom-color: #2c364a;
-      }
-
       .content a.cv-link {
           color: #3e4a61;
           font-weight: bold;
           text-decoration: none;
-          transition: background-color 0.3s;
       }
 
-      .content a.cv-link:hover {
-          background-color: #9aabcb;
+      .projects {
+          background-color: #ffffff88;
+          padding: 1.5rem 2rem;
+          border-radius: 15px;
+          width: 100%;
+      }
+
+      .projects h2 {
+          font-size: 1.5rem;
+          color: #3e4a61;
+          margin-bottom: 1rem;
+      }
+
+      /* ===== MINI CARDS ===== */
+
+      .project-cards {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-bottom: 2.5rem;
+      }
+
+      .project-card {
+          background-color: #f1efe9;
+          border-radius: 14px;
+          padding: 1.4rem 1.6rem;
+          /* box-shadow: 0 4px 12px rgba(0,0,0,0.08); */
+      }
+
+      .project-title {
+          font-size: 1.05rem;
+          font-weight: 600;
+          color: #2c364a;
+          margin-bottom: 0.3rem;
+      }
+
+      .project-meta {
+          font-size: 0.85rem;
+          color: #6b7280;
+          margin-bottom: 0.8rem;
+          font-style: italic;
+      }
+
+      .project-synopsis {
+          font-size: 0.95rem;
+          color: #444;
+          margin-bottom: 0.9rem;
+      }
+
+      .project-link {
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #3e4a61;
+          text-decoration: none;
+          border-bottom: 1px solid #3e4a61;
+      }
+
+      .project-link:hover {
+          color: #2c364a;
+          border-bottom-color: #2c364a;
       }
 
       @media screen and (max-width: 768px) {
         .about-me-wrapper {
             flex-direction: column;
             padding: 2rem 1.5rem;
-            align-items: center;
             text-align: center;
         }
 
-        .photo {
-            margin-right: 0;
-            max-width: 250px;
-            width: 100%;
-        }
-
-        .content {
-            max-width: 100%;
-            text-align: center;
-        }
-
-        .content h1 {
-        text-align: center;
-        justify-content: center;
-        }
-        
         .links {
             justify-content: center;
         }
+      }
 
-        .projects-wrapper {
-            padding: 1rem;
+      .project-synopsis-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0.8rem 0 1rem;
         }
 
-        .projects {
-            padding: 1.5rem;
+        .project-synopsis-image img {
+            max-width: 100%;
+            max-height: 300px;
+            /* border-radius: 10px; */
+            /* box-shadow: 0 2px 6px rgba(0,0,0,0.12); */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-    }
+
+        .project-synopsis-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+        }
     </style>
 </head>
+
 <body>
-    <div class="about-me-wrapper">
-        <div class="photo">
-            <img src="michaela.jpeg" alt="Michaela">
+
+<div class="about-me-wrapper">
+    <div class="photo">
+        <img src="michaela.jpeg" alt="Michaela">
+    </div>
+
+    <div class="content">
+        <h1>Hi, I am Michaela! 👋</h1>
+        <p>
+            My name is Michaela Brezinova and I am a Computational Chemistry PhD student at the University of Cambridge
+            specializing in <b>AI-driven drug discovery</b> 💊. This includes efficient traversals of chemical space and
+            structure-based and sequence-based drug design. Recently I have been quite interested in <b>covalent inhibitors</b>! Previously, I have worked as a SWE at <b>Google Health</b>.
+            For more details, see my <a href="Brezinova_CV.pdf" target="_blank" class="cv-link">CV</a>.
+            Reach me at <b>mb2462</b> [at] <b>cam.ac.uk</b>.
+        </p>
+
+        <div class="links">
+            <a href="https://x.com/michbrezinova" target="_blank">🐦 Twitter/X</a>
+            <a href="https://www.linkedin.com/in/michaela-brezinova/" target="_blank">🔗 LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=2vyAlGsAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a>
+            <a href="https://github.com/MichaelaBrezinova" target="_blank">🐱 GitHub</a>
+        </div>
+    </div>
+</div>
+
+<div class="projects-wrapper">
+    <div class="projects">
+
+        <h2>Highlighted Projects</h2>
+
+        <div class="project-cards">
+
+            <!-- EMBO CARD -->
+            <div class="project-card">
+                <div class="project-title">
+                    Identification of potent high-affinity secondary nucleation inhibitors of Aβ42 aggregation from an ultra-large chemical library using deep docking
+                </div>
+
+                <div class="project-meta">
+                    2025 · EMBO Molecular Systems Biology
+                </div>
+
+                <a class="project-link"
+                   href="https://link.springer.com/article/10.1038/s44320-025-00159-5"
+                   target="_blank">
+                    <i class="fa-solid fa-link"></i> View publication
+                </a>
+
+                <div class="project-synopsis-image">
+                    <a href="images/synopsis.png" target="_blank">
+                        <img src="images/synopsis.png" alt="EMBO synopsis figure">
+                    </a>
+                </div>
+            </div>
+
+            <!-- JMB CARD -->
+            <div class="project-card">
+                <div class="project-title">
+                    DropFit: Determination of the Critical Concentration for Protein
+                    Liquid–Liquid Phase Separation
+                </div>
+
+                <div class="project-meta">
+                    2025 · Journal of Molecular Biology
+                </div>
+
+                <a class="project-link"
+                   href="https://www.sciencedirect.com/science/article/pii/S0022283625003602"
+                   target="_blank">
+                    <i class="fa-solid fa-link"></i> View publication
+                </a>
+            </div>
+
         </div>
 
-        <div class="content">
-            <h1>Hi, I am Michaela! <span>👋</span></h1>
-            <p>
-                My name is Michaela Brezinova and I am a Computational Chemistry PhD student at the University of Cambridge specializing in <b>AI-driven drug discovery</b> 💊. This includes efficient traversals of chemical space and structure-based and sequence-based drug design. Previously I worked as a SWE at <b>Google Health</b>. For more details, check out my <a href="Brezinova_CV.pdf" target="_blank" class="cv-link">CV</a>. Feel free to also reach out at <span><b>mb2462</b><span style="display:none;">nospam</span> [at] <b>cam.ac.uk</b></span>
-            </p>
+        <h2>Patents</h2>
 
-            <div class="links">
-                <a href="https://x.com/michbrezinova" target="_blank">🐦 Twitter/X</a>
-                <a href="https://www.linkedin.com/in/michaela-brezinova/" target="_blank">🔗 LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=2vyAlGsAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a>
-                <a href="https://github.com/MichaelaBrezinova" target="_blank">🐱 GitHub </a>
+        <div class="project-cards">
+            <div class="project-card">
+                <div class="project-title">
+                    Detecting variants in nucleotide sequences based on haplotype diversity
+                </div>
+                <div class="project-meta">
+                    2024 · WO2025090883A1
+                </div>
+                <a class="project-link"
+                   href="https://patents.google.com/patent/WO2025090883A1/en"
+                   target="_blank">
+                    <i class="fa-solid fa-link"></i> View patent
+                </a>
             </div>
         </div>
-    </div>
 
-    <div class="projects-wrapper">
-        <div class="projects">
-            <h2>Highlighted Projects</h2>
-            <ul>
-                <li><a href="https://www.embopress.org/doi/full/10.1038/s44320-025-00159-5"> <i class="fa-solid fa-link"></i> (EMBO Molecular Systems Biology) Identification of high-affinity secondary nucleation inhibitors of Aβ42 aggregation from an ultra-large chemical library using Deep Docking</a></li>
-                <li><a href="https://www.sciencedirect.com/science/article/pii/S0022283625003602"> <i class="fa-solid fa-link"></i> (Journal of Molecular Biology) DropFit: Determination of the Critical Concentration for Protein Liquid–Liquid Phase Separation</a></li>
-            </ul>
-            <h2>Patents</h2>
-            <ul>
-                <li><a href="https://patents.google.com/patent/WO2025090883A1/en?oq=WO2025090883A1"> <i class="fa-solid fa-link"></i> (WO2025090883A1) Detecting variants in nucleotide sequences based on haplotype diversity </a></li>
-            </ul>
-        </div>
     </div>
+</div>
+
 </body>
 </html>
