@@ -88,7 +88,7 @@
           font-weight: 600;
       }
 
-      #about, #interests, #projects, #patents {
+      #about, #experience, #interests, #projects, #patents {
           scroll-margin-top: 56px;
       }
 
@@ -109,6 +109,115 @@
         max-width: 950px;
         margin: 0 auto;
         padding: 2rem 2rem 4.5rem;
+      }
+
+      .wexp-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .wexp-col h3 {
+          font-family: 'Space Grotesk', 'Inter', sans-serif;
+          font-weight: 600;
+          font-size: 0.78rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--accent);
+          margin: 0 0 0.7rem;
+          padding-bottom: 0.4rem;
+          border-bottom: 1px solid var(--hairline);
+      }
+
+      .wexp-item {
+          margin-bottom: 0.55rem;
+      }
+
+      .wexp-header {
+          display: flex;
+          align-items: center;
+          gap: 0.45rem;
+      }
+
+      .wexp-header .wexp-date {
+          margin-left: auto;
+      }
+
+      .wexp-logo {
+          flex: 0 0 20px;
+          width: 20px;
+          height: 20px;
+          border-radius: 5px;
+          background-color: var(--card);
+          border: 1px solid var(--hairline);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+      }
+
+      .wexp-logo img {
+          max-width: 78%;
+          max-height: 78%;
+          object-fit: contain;
+      }
+
+      .wexp-logo.mono {
+          background-color: var(--deep-dark);
+          color: #f6efe0;
+      }
+
+      .wexp-logo.mono i {
+          font-size: 0.65rem;
+      }
+
+      .wexp-logo.placeholder {
+          background-color: transparent;
+          border-color: transparent;
+      }
+
+      .wexp-org {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: var(--deep-dark);
+      }
+
+      .wexp-subrow {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: 0.6rem;
+          margin-left: calc(20px + 0.45rem);
+      }
+
+      .wexp-subrow.full .wexp-role {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+      }
+
+      .wexp-role {
+          font-size: 0.74rem;
+          font-weight: 400;
+          color: #6b6459;
+      }
+
+      .wexp-date {
+          font-size: 0.7rem;
+          font-style: italic;
+          color: #8a8378;
+          white-space: nowrap;
+      }
+
+      .wexp-note {
+          margin-left: calc(20px + 0.45rem);
+          margin-top: 0.15rem;
+          font-size: 0.7rem;
+          font-style: italic;
+          color: #8a8378;
+          line-height: 1.4;
       }
 
       .photo {
@@ -220,18 +329,19 @@
 
       .interest-tags {
           display: flex;
-          gap: 0.6rem;
+          gap: 0.4rem;
           flex-wrap: wrap;
       }
 
       .interest-tag {
-          font-size: 0.85rem;
+          font-size: 0.66rem;
           font-weight: 500;
           color: var(--deep-dark);
           background-color: #eceae4;
           border: 1px solid var(--hairline);
-          padding: 0.4rem 0.9rem;
+          padding: 0.28rem 0.6rem;
           border-radius: 999px;
+          white-space: nowrap;
       }
 
       .interest-tag.personal {
@@ -252,10 +362,10 @@
       .projects h2 {
           font-family: 'Space Grotesk', 'Inter', sans-serif;
           font-weight: 600;
-          font-size: 1.35rem;
+          font-size: 1.15rem;
           color: var(--deep-dark);
-          margin: 0 0 0.8rem;
-          padding-bottom: 0.5rem;
+          margin: 0 0 0.7rem;
+          padding-bottom: 0.4rem;
           border-bottom: 1px solid var(--hairline);
       }
 
@@ -305,28 +415,28 @@
       .project-meta .author-tag {
           display: inline-block;
           margin-left: 0.5rem;
-          padding: 0.1rem 0.5rem;
+          padding: 0.1rem 0.45rem;
           border-radius: 999px;
           background-color: var(--accent);
           color: #fff;
-          font-size: 0.72rem;
+          font-size: 0.64rem;
           letter-spacing: 0.02em;
           text-transform: none;
       }
 
       .project-title {
           font-family: 'Space Grotesk', 'Inter', sans-serif;
-          font-size: 1rem;
+          font-size: 0.9rem;
           font-weight: 600;
           color: var(--deep-dark);
-          margin-bottom: 0.25rem;
+          margin-bottom: 0.2rem;
           line-height: 1.3;
       }
 
       .project-authors {
-          font-size: 0.78rem;
+          font-size: 0.7rem;
           color: #6b6459;
-          margin-bottom: 0.3rem;
+          margin-bottom: 0.25rem;
           line-height: 1.4;
       }
 
@@ -337,9 +447,9 @@
       }
 
       .project-meta {
-          font-size: 0.74rem;
+          font-size: 0.66rem;
           color: #8a8378;
-          margin-bottom: 0.4rem;
+          margin-bottom: 0.35rem;
           letter-spacing: 0.03em;
           text-transform: uppercase;
       }
@@ -347,11 +457,11 @@
       .project-meta .status-tag {
           display: inline-block;
           margin-left: 0.5rem;
-          padding: 0.1rem 0.5rem;
+          padding: 0.1rem 0.45rem;
           border-radius: 999px;
           background-color: #e7ece6;
           color: var(--deep);
-          font-size: 0.72rem;
+          font-size: 0.64rem;
           letter-spacing: 0.02em;
           text-transform: none;
       }
@@ -363,7 +473,7 @@
       }
 
       .project-link {
-          font-size: 0.78rem;
+          font-size: 0.7rem;
           font-weight: 600;
           color: var(--deep);
           text-decoration: none;
@@ -396,18 +506,69 @@
       }
 
       @media screen and (max-width: 768px) {
+        .site-nav-inner {
+            padding: 0 1rem;
+            gap: 1.1rem;
+        }
+
+        .nav-tab {
+            font-size: 0.78rem;
+        }
+
         .about-me-wrapper {
             flex-direction: column;
             padding: 2.5rem 1.5rem;
             text-align: center;
         }
 
+        .photo {
+            flex: 0 0 auto;
+            width: 55%;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
         .content h1 {
             font-size: 2rem;
         }
 
+        .content p.bio {
+            text-align: left;
+        }
+
         .links {
             justify-content: center;
+        }
+
+        .projects-wrapper {
+            padding: 1.5rem 1.1rem 3rem;
+        }
+
+        .projects {
+            padding: 1.3rem 1.1rem;
+        }
+
+        .wexp-wrapper {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .wexp-header {
+            flex-wrap: wrap;
+            row-gap: 0.15rem;
+        }
+
+        .wexp-org {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
+        .interest-tags {
+            justify-content: center;
+        }
+
+        .project-cards.scrollable {
+            max-height: 360px;
         }
       }
 
@@ -438,6 +599,7 @@
 <nav class="site-nav">
     <div class="site-nav-inner">
         <a href="#about" class="nav-tab">About</a>
+        <a href="#experience" class="nav-tab">Experience</a>
         <a href="#interests" class="nav-tab">Interests</a>
         <a href="#projects" class="nav-tab">Projects</a>
         <a href="#patents" class="nav-tab">Patents</a>
@@ -484,6 +646,100 @@
 </div>
 
 <div class="projects-wrapper">
+
+    <div class="projects" id="experience">
+        <h2>Experience</h2>
+
+        <div class="wexp-wrapper">
+        <div class="wexp-col">
+        <h3>Work</h3>
+        <div class="wexp-item">
+            <div class="wexp-header">
+                <div class="wexp-logo"><img src="images/logos/x_moonshot.svg" alt="X, The Moonshot Factory"></div>
+                <div class="wexp-org">X, The Moonshot Factory (Google X)</div>
+                <span class="wexp-date">Jul 2026 – Present</span>
+            </div>
+            <div class="wexp-subrow">
+                <span class="wexp-role">PhD Resident</span>
+            </div>
+        </div>
+        <div class="wexp-item">
+            <div class="wexp-header">
+                <div class="wexp-logo"><img src="images/logos/cambridge.png" alt="University of Cambridge"></div>
+                <div class="wexp-org">University of Cambridge</div>
+                <span class="wexp-date">May – Oct 2023</span>
+            </div>
+            <div class="wexp-subrow">
+                <span class="wexp-role">Research Assistant</span>
+            </div>
+        </div>
+        <div class="wexp-item">
+            <div class="wexp-header">
+                <div class="wexp-logo"><img src="images/logos/illumina.svg" alt="Illumina"></div>
+                <div class="wexp-org">Illumina</div>
+                <span class="wexp-date">Aug – Nov 2022</span>
+            </div>
+            <div class="wexp-subrow">
+                <span class="wexp-role">Bioinformatics Intern</span>
+            </div>
+        </div>
+        <div class="wexp-item">
+            <div class="wexp-header">
+                <div class="wexp-logo"><img src="images/logos/google.svg" alt="Google"></div>
+                <div class="wexp-org">Google Health</div>
+                <span class="wexp-date">Sep 2020 – Oct 2021</span>
+            </div>
+            <div class="wexp-subrow">
+                <span class="wexp-role">Software Engineer</span>
+            </div>
+        </div>
+        <div class="wexp-item">
+            <div class="wexp-header">
+                <div class="wexp-logo placeholder"></div>
+                <div class="wexp-org">Earlier Internships</div>
+                <span class="wexp-date">2018 – 2020</span>
+            </div>
+            <div class="wexp-subrow full">
+                <span class="wexp-role">CERN (ALICE Data Acquisition),<br>Google (Travel, Account)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="wexp-col">
+        <h3>Education</h3>
+        <div class="wexp-item">
+            <div class="wexp-header">
+                <div class="wexp-logo"><img src="images/logos/cambridge.png" alt="University of Cambridge"></div>
+                <div class="wexp-org">University of Cambridge</div>
+                <span class="wexp-date">Oct 2023 – Present</span>
+            </div>
+            <div class="wexp-subrow">
+                <span class="wexp-role">PhD, Computational Chemistry (Vendruscolo Lab)</span>
+            </div>
+        </div>
+        <div class="wexp-item">
+            <div class="wexp-header">
+                <div class="wexp-logo"><img src="images/logos/cambridge.png" alt="University of Cambridge"></div>
+                <div class="wexp-org">University of Cambridge</div>
+                <span class="wexp-date">Oct 2021 – Nov 2022</span>
+            </div>
+            <div class="wexp-subrow">
+                <span class="wexp-role">MPhil, Computational Biology · Distinction</span>
+            </div>
+        </div>
+        <div class="wexp-item">
+            <div class="wexp-header">
+                <div class="wexp-logo"><img src="images/logos/edinburgh.svg" alt="University of Edinburgh"></div>
+                <div class="wexp-org">University of Edinburgh</div>
+                <span class="wexp-date">Sep 2016 – Jun 2020</span>
+            </div>
+            <div class="wexp-subrow">
+                <span class="wexp-role">BSc Hons, Mathematics &amp; Computer Science · First Class</span>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
 
     <div class="projects" id="interests">
         <h2>Interests</h2>
