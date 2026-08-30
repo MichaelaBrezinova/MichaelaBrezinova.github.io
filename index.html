@@ -26,6 +26,10 @@
           box-sizing: border-box;
       }
 
+      html {
+          scroll-behavior: smooth;
+      }
+
       body {
           font-family: 'Inter', 'Segoe UI', sans-serif;
           margin: 0;
@@ -40,6 +44,52 @@
           background-attachment: fixed;
           color: var(--ink);
           line-height: 1.8;
+      }
+
+      .site-nav {
+          position: sticky;
+          top: 0;
+          z-index: 20;
+          background-color: rgba(244, 244, 241, 0.3);
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+          border-bottom: 1px solid var(--hairline);
+      }
+
+      .site-nav-inner {
+          max-width: 950px;
+          margin: 0 auto;
+          padding: 0 2rem;
+          display: flex;
+          gap: 1.6rem;
+          overflow-x: auto;
+      }
+
+      .nav-tab {
+          text-decoration: none;
+          color: var(--deep-dark);
+          font-family: 'Space Grotesk', 'Inter', sans-serif;
+          font-size: 0.85rem;
+          font-weight: 500;
+          white-space: nowrap;
+          padding: 0.85rem 0.1rem 0.7rem;
+          border-bottom: 2px solid transparent;
+          transition: color 0.15s ease, border-color 0.15s ease;
+      }
+
+      .nav-tab:hover {
+          color: var(--accent);
+          border-bottom-color: var(--accent-soft);
+      }
+
+      .nav-tab.cv-tab {
+          margin-left: auto;
+          color: var(--accent);
+          font-weight: 600;
+      }
+
+      #about, #interests, #projects, #patents {
+          scroll-margin-top: 56px;
       }
 
       .about-me-wrapper {
@@ -385,7 +435,17 @@
 
 <body>
 
-<div class="about-me-wrapper">
+<nav class="site-nav">
+    <div class="site-nav-inner">
+        <a href="#about" class="nav-tab">About</a>
+        <a href="#interests" class="nav-tab">Interests</a>
+        <a href="#projects" class="nav-tab">Projects</a>
+        <a href="#patents" class="nav-tab">Patents</a>
+        <a href="Brezinova_CV.pdf" target="_blank" class="nav-tab cv-tab">CV</a>
+    </div>
+</nav>
+
+<div class="about-me-wrapper" id="about">
     <div class="photo">
         <img src="michaela.jpeg" alt="Michaela">
     </div>
@@ -425,7 +485,7 @@
 
 <div class="projects-wrapper">
 
-    <div class="projects">
+    <div class="projects" id="interests">
         <h2>Interests</h2>
 
         <div class="interest-tags">
@@ -439,7 +499,7 @@
         </div>
     </div>
 
-    <div class="projects">
+    <div class="projects" id="projects">
         <h2>Highlighted Projects</h2>
 
         <div class="project-cards scrollable">
@@ -558,7 +618,7 @@
         </div>
     </div>
 
-    <div class="projects">
+    <div class="projects" id="patents">
         <h2>Patents</h2>
 
         <div class="project-cards">
@@ -584,7 +644,7 @@
 </div>
 
 <footer class="site-footer">
-    <i class="fa-solid fa-pen"></i> Last updated <time datetime="2026-08-29">August 29, 2026</time>
+    <i class="fa-solid fa-pen"></i> Last updated <time datetime="2026-08-30">August 30, 2026</time>
 </footer>
 
 </body>
